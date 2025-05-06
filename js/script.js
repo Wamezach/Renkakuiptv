@@ -64,6 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
     m3u8List.appendChild(option);
   });
 
+  // Restore saved stream if available
+  const savedStream = localStorage.getItem("selectedStream");
+  if (savedStream) {
+    m3u8List.value = savedStream;
+  }
+
   // Load stream
   function loadStream(url) {
     if (Hls.isSupported()) {
@@ -75,13 +81,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Auto load first stream
-  if (m3u8List.value) {
-    loadStream(m3u8List.value);
-  }
+  loadStream(m3u8List.value);
 
   m3u8List.addEventListener("change", function () {
-    loadStream(this.value);
+    const selectedURL = this.value;
+    localStorage.setItem("selectedStream", selectedURL);
+    loadStream(selectedURL);
   });
 
   // Dropdown animation
