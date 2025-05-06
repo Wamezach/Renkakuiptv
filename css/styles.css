@@ -38,24 +38,6 @@ header {
   height: 40px;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-shrink: 0;
-}
-
-.channel-controls {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: flex-end;
-  flex-grow: 1;
-  min-width: 300px;
-  padding-right: 0.5rem;
-}
-
 .dropdown-wrapper {
   display: flex;
   flex-direction: column;
@@ -81,6 +63,103 @@ header {
 .form-select:hover,
 .form-select:focus {
   background-color: var(--hover-bg);
+}
+
+.toggle-btn {
+  margin-left: 1rem;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-btn:hover {
+  background-color: var(--hover-bg);
+}
+
+.container-fluid {
+  flex-grow: 1;
+  padding: 0;
+}
+
+.player-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - 80px);
+}
+
+.video-wrapper {
+  flex: 1;
+  padding: 0;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.video-wrapper:hover {
+  transform: scale(1.01);
+}
+
+video {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+.ad-wrapper {
+  width: 160px;
+  padding: 12px;
+  background-color: var(--accent-color);
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+footer {
+  background-color: var(--header-footer-bg);
+  color: white;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+  transition: 0.3s;
+  font-size: 0.9rem;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.channel-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  flex-grow: 1;
+  min-width: 300px;
+  padding-right: 0.5rem;
 }
 
 .toggle-switch {
@@ -133,73 +212,6 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-.container-fluid {
-  flex-grow: 1;
-  padding: 0;
-}
-
-.player-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: calc(100vh - 160px);
-}
-
-.video-wrapper {
-  flex: 1;
-  padding: 0;
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.video-wrapper:hover {
-  transform: scale(1.01);
-}
-
-video {
-  width: 100%;
-  height: auto;
-  max-height: 100%;
-}
-
-.ad-wrapper {
-  width: 160px;
-  padding: 12px;
-  background-color: var(--accent-color);
-  border-radius: 10px;
-  text-align: center;
-  font-weight: 500;
-  color: var(--text-color);
-  display: none;
-}
-
-footer {
-  background-color: var(--header-footer-bg);
-  color: white;
-  padding: 1.5rem 1rem;
-  text-align: center;
-}
-
-footer a {
-  color: white;
-  transition: 0.3s;
-  font-size: 0.9rem;
-}
-
-.header-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0 1rem;
-}
-
 .header-flex a {
   text-decoration: none;
   color: inherit;
@@ -209,30 +221,15 @@ footer a {
   border: none;
 }
 
-@media (min-width: 768px) {
-  .ad-wrapper {
-    display: block;
-  }
-
-  .dropdown-wrapper {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  .dropdown-wrapper label {
-    margin-right: 0.5rem;
-    margin-bottom: 0;
-  }
-}
-
+/* Responsive Adjustments */
 @media (max-width: 767px) {
   .brand {
-    display: none; /* Hide brand (logo + title) on small screens */
+    display: none;
   }
 
   .player-container {
     flex-direction: column;
+    align-items: center;
     height: auto;
     padding: 1rem;
   }
@@ -242,7 +239,33 @@ footer a {
     max-width: 100%;
   }
 
+  video {
+    width: 100%;
+    height: auto;
+  }
+
+  .ad-wrapper {
+    display: none;
+  }
+
   footer a {
     font-size: 0.8rem;
+  }
+
+  .brand h1 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .dropdown-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .dropdown-wrapper label {
+    margin-right: 0.5rem;
+    margin-bottom: 0;
   }
 }
