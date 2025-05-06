@@ -91,11 +91,12 @@ header a:hover {
   align-items: flex-start;
   margin-left: 1rem;
   max-width: 300px;
+  width: 100%;
 }
 
 .dropdown-wrapper label {
   color: white;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .form-select {
@@ -107,13 +108,23 @@ header a:hover {
   transition: 0.3s;
 }
 
-/* Ensure dropdown text is readable in dark mode */
 body.dark .form-select {
   background-color: #4a3a6a;
   color: #ffffff;
   border-color: #e91e63;
 }
 
+/* FIX: Ensure pink focus border */
+.form-select:focus {
+  outline: none;
+  border-color: #e91e63;
+  box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.3);
+}
+
+body.dark .form-select:focus {
+  border-color: #e91e63;
+  box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.4);
+}
 
 .form-select:hover,
 .form-select:focus {
@@ -271,14 +282,6 @@ footer a:hover {
 
   footer a {
     font-size: 0.8rem;
-  }
-
-  .dropdown-wrapper {
-    width: 100%;
-  }
-
-  .dropdown-wrapper label {
-    margin-bottom: 0.5rem;
   }
 }
 
