@@ -5,7 +5,8 @@
   --header-footer-bg: #4b2e83;
   --accent-color: #d1c4e9;
   --hover-bg: #e9dffb;
-  --switch-color: #2196F3;
+  --switch-color-light: #2196F3;
+  --switch-color-dark: #6a1b9a;
 }
 
 body.dark {
@@ -13,8 +14,7 @@ body.dark {
   --text-color: #f1eaff;
   --header-footer-bg: #2a0e4f;
   --accent-color: #3a285f;
-  --hover-bg: #4a3764;
-  --switch-color: #e91e63; /* Pinkish */
+  --switch-color-light: #e91e63; /* pinkish in dark mode */
 }
 
 /* Reset and Base Styling */
@@ -40,6 +40,14 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+header a,
+header a:visited,
+header a:active,
+header a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
 .logo {
   height: 40px;
 }
@@ -62,13 +70,6 @@ header {
 
 .brand img {
   border: none;
-}
-
-.brand h1,
-.brand a,
-.brand h1 a {
-  text-decoration: none;
-  color: white;
 }
 
 /* Channel Controls */
@@ -155,7 +156,7 @@ header {
 }
 
 input:checked + .slider {
-  background-color: var(--switch-color);
+  background-color: var(--switch-color-light);
 }
 
 input:checked + .slider:before {
@@ -221,11 +222,10 @@ footer a {
   color: white;
   transition: 0.3s;
   font-size: 0.9rem;
-  text-decoration: none;
 }
 
 footer a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Responsive Styles */
