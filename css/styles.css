@@ -1,3 +1,4 @@
+/* Theme Variables */
 :root {
   --bg-color: #ede7f6;
   --text-color: #2e1a47;
@@ -13,6 +14,7 @@ body.dark {
   --accent-color: #3a285f;
 }
 
+/* Reset and Base Styling */
 body, h1, p {
   margin: 0;
   padding: 0;
@@ -27,6 +29,7 @@ body {
   flex-direction: column;
 }
 
+/* Header */
 header {
   background-color: var(--header-footer-bg);
   color: white;
@@ -36,6 +39,37 @@ header {
 
 .logo {
   height: 40px;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.brand img {
+  border: none;
+}
+
+.channel-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  flex-grow: 1;
+  min-width: 300px;
+  padding-right: 0.5rem;
 }
 
 .dropdown-wrapper {
@@ -65,103 +99,7 @@ header {
   background-color: var(--hover-bg);
 }
 
-.toggle-btn {
-  margin-left: 1rem;
-  background-color: var(--accent-color);
-  color: var(--text-color);
-  border: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.toggle-btn:hover {
-  background-color: var(--hover-bg);
-}
-
-.container-fluid {
-  flex-grow: 1;
-  padding: 0;
-}
-
-.player-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: calc(100vh - 80px);
-}
-
-.video-wrapper {
-  flex: 1;
-  padding: 0;
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-
-.video-wrapper:hover {
-  transform: scale(1.01);
-}
-
-video {
-  width: 100%;
-  height: auto;
-  max-height: 100%;
-}
-
-.ad-wrapper {
-  width: 160px;
-  padding: 12px;
-  background-color: var(--accent-color);
-  border-radius: 10px;
-  text-align: center;
-  font-weight: 500;
-  color: var(--text-color);
-}
-
-footer {
-  background-color: var(--header-footer-bg);
-  color: white;
-  padding: 1.5rem 1rem;
-  text-align: center;
-}
-
-footer a {
-  color: white;
-  transition: 0.3s;
-  font-size: 0.9rem;
-}
-
-.header-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0 1rem;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-shrink: 0;
-}
-
-.channel-controls {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: flex-end;
-  flex-grow: 1;
-  min-width: 300px;
-  padding-right: 0.5rem;
-}
-
+/* Theme Toggle Switch */
 .toggle-switch {
   display: flex;
   align-items: center;
@@ -212,16 +150,72 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-.header-flex a {
-  text-decoration: none;
-  color: inherit;
+/* Main Content */
+.container-fluid {
+  flex-grow: 1;
+  padding: 0;
 }
 
-.brand img {
-  border: none;
+.player-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem 4rem;
 }
 
-/* Responsive Adjustments */
+.video-wrapper {
+  flex: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.video-wrapper:hover {
+  transform: scale(1.01);
+}
+
+video {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  display: block;
+}
+
+.ad-wrapper {
+  width: 160px;
+  padding: 12px;
+  background-color: var(--accent-color);
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* Footer */
+footer {
+  background-color: var(--header-footer-bg);
+  color: white;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+  transition: 0.3s;
+  font-size: 0.9rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
 @media (max-width: 767px) {
   .brand {
     display: none;
@@ -230,30 +224,33 @@ input:checked + .slider:before {
   .player-container {
     flex-direction: column;
     align-items: center;
-    height: auto;
     padding: 1rem;
+    margin-bottom: 0;
   }
 
   .video-wrapper {
     width: 100%;
-    max-width: 100%;
-  }
-
-  video {
-    width: 100%;
-    height: auto;
+    padding: 0;
   }
 
   .ad-wrapper {
     display: none;
   }
 
+  .brand h1 {
+    font-size: 1.2rem;
+  }
+
   footer a {
     font-size: 0.8rem;
   }
 
-  .brand h1 {
-    font-size: 1.2rem;
+  .dropdown-wrapper {
+    width: 100%;
+  }
+
+  .dropdown-wrapper label {
+    margin-bottom: 0.5rem;
   }
 }
 
