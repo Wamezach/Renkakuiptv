@@ -5,7 +5,7 @@
   --header-footer-bg: #4b2e83;
   --accent-color: #d1c4e9;
   --hover-bg: #e9dffb;
-  --switch-color: #2196F3; /* default light mode color */
+  --switch-color: #2196F3;
 }
 
 body.dark {
@@ -13,15 +13,14 @@ body.dark {
   --text-color: #f1eaff;
   --header-footer-bg: #2a0e4f;
   --accent-color: #3a285f;
-  --hover-bg: #e9dffb;
-  --switch-color: #e9dffb; /* pinkish tone in dark mode */
+  --hover-bg: #4a3764;
+  --switch-color: #e91e63; /* Pinkish */
 }
 
 /* Reset and Base Styling */
 body, h1, p {
   margin: 0;
   padding: 0;
-  text-decoration: none;
 }
 
 body {
@@ -65,8 +64,11 @@ header {
   border: none;
 }
 
-.brand h1 {
+.brand h1,
+.brand a,
+.brand h1 a {
   text-decoration: none;
+  color: white;
 }
 
 /* Channel Controls */
@@ -223,7 +225,7 @@ footer a {
 }
 
 footer a:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 /* Responsive Styles */
