@@ -11,7 +11,6 @@ body.dark {
   --text-color: #f1eaff;
   --header-footer-bg: #2a0e4f;
   --accent-color: #3a285f;
-  --hover-bg: #4b3378;
 }
 
 /* Base Styling */
@@ -100,7 +99,8 @@ header {
 
 .video-wrapper {
   flex-grow: 1;
-  max-width: 960px;
+  width: 100%; /* Ensure it fills available space */
+  max-width: 960px; /* Keep this if you want maximum size */
   background: white;
   border-radius: 16px;
   overflow: hidden;
@@ -145,6 +145,39 @@ video {
   }
 }
 
+/* Responsive Adjustments */
+.brand h1 {
+  font-size: 1.5rem; /* Default size */
+}
+
+@media (max-width: 767px) {
+  .logo,
+  .brand h1 {
+    display: none; /* Hide logo and title text */
+  }
+
+  .player-container {
+    width: 100%; /* Make player fill the available space */
+    max-width: none; /* Remove max-width restriction */
+    height: auto; /* Allow height to expand */
+    padding: 0; /* Remove padding */
+  }
+
+  video {
+    width: 100%; /* Ensure video fills the player width */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Adjust the player height */
+  .video-wrapper {
+    height: 500px; /* Set a specific height for player */
+  }
+
+  .brand {
+    display: none; /* Hide the entire brand section */
+  }
+}
+
 /* Footer */
 footer {
   background-color: var(--header-footer-bg);
@@ -156,12 +189,15 @@ footer {
 footer a {
   color: white;
   transition: 0.3s;
+  font-size: 0.9rem; /* Adjust footer link size */
 }
 
-footer a:hover {
-  color: var(--accent-color);
-  text-decoration: underline;
+@media (max-width: 767px) {
+  footer a {
+    font-size: 0.8rem; /* Smaller size for mobile */
+  }
 }
+
 /* Header Layout Fix */
 .header-flex {
   display: flex;
@@ -189,7 +225,6 @@ footer a:hover {
   min-width: 300px; /* Minimum width for controls */
   padding-right: 0.5rem; /* Space from the edge */
 }
-
 
 /* Toggle Switch Styles */
 .toggle-switch {
@@ -241,6 +276,7 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(26px);
 }
+
 .header-flex a {
   text-decoration: none; /* No underline on links */
   color: inherit; /* Inherit color from parent */
@@ -249,5 +285,3 @@ input:checked + .slider:before {
 .brand img {
   border: none; /* Remove any borders from images */
 }
-
-
