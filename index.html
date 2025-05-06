@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,49 +8,47 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
-
 <body>
-<header class="bg-dark-violet text-light shadow">
-  <div class="container header-flex">
-    <a href="#" class="text-light text-decoration-none brand">
-      <img src="logo.png" alt="Renkaku IPTV Logo" class="logo me-2" />
-      <h1 class="m-0 fs-4">Renkaku IPTV</h1>
-    </a>
-    <div class="channel-controls">
-      <div class="dropdown-wrapper">
-        <label for="m3u8List" class="form-label text-light">Select Channel</label>
-        <select class="form-select" id="m3u8List"></select>
-      </div>
-      <div class="toggle-switch">
-        <label class="switch">
-          <input type="checkbox" id="themeToggle">
-          <span class="slider round"></span>
-        </label>
+  <header class="bg-dark-violet text-light shadow">
+    <div class="container header-flex">
+      <a href="#" class="text-light text-decoration-none brand">
+        <img src="logo.png" alt="Renkaku IPTV Logo" class="logo me-2" />
+        <h1 class="m-0 fs-4">Renkaku IPTV</h1>
+      </a>
+      <div class="channel-controls">
+        <div class="dropdown-wrapper">
+          <label for="m3u8List" class="form-label text-light">Select Channel</label>
+          <select class="form-select" id="m3u8List"></select>
+        </div>
+        <div class="toggle-switch">
+          <label class="switch">
+            <input type="checkbox" id="themeToggle">
+            <span class="slider round"></span>
+          </label>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main class="container-fluid">
-  <div class="player-container">
-    <div class="ad-wrapper">Ad Space Left</div>
-    <div class="video-wrapper">
-      <video id="video" controls autoplay></video>
+  <main class="container-fluid">
+    <div class="player-container">
+      <div class="ad-wrapper">Ad Space Left</div>
+      <div class="video-wrapper">
+        <video id="video" controls autoplay></video>
+      </div>
+      <div class="ad-wrapper">Ad Space Right</div>
     </div>
-    <div class="ad-wrapper">Ad Space Right</div>
-  </div>
-</main>
+  </main>
 
-<footer>
-  <div class="container text-center">
-    <p><strong>About Us:</strong> We provide premium IPTV access worldwide.</p>
-    <p><strong>Disclaimer:</strong> Content may vary by region or licensing.</p>
-    <p><a href="mailto:contact@renkakuiptv.com">Contact Us</a></p>
-  </div>
-</footer>
+  <footer>
+    <div class="container text-center">
+      <p><strong>About Us:</strong> We provide premium IPTV access worldwide.</p>
+      <p><strong>Disclaimer:</strong> Content may vary by region or licensing.</p>
+      <p><a href="mailto:contact@renkakuiptv.com">Contact Us</a></p>
+    </div>
+  </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="js/script.js"></script>
 </body>
-
 </html>
