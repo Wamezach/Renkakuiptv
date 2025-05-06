@@ -107,6 +107,14 @@ header a:hover {
   transition: 0.3s;
 }
 
+/* Ensure dropdown text is readable in dark mode */
+body.dark .form-select {
+  background-color: #4a3a6a;
+  color: #ffffff;
+  border-color: #e91e63;
+}
+
+
 .form-select:hover,
 .form-select:focus {
   background-color: var(--hover-bg);
