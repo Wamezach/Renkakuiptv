@@ -234,3 +234,45 @@ document.addEventListener("DOMContentLoaded", () => {
     dropdown.style.transform = "translateY(0)";
   }, 200);
 });
+
+// Load HLS if needed
+document.addEventListener("DOMContentLoaded", function () {
+  const video = document.getElementById("video");
+  const m3u8List = document.getElementById("m3u8List");
+
+  // Theme toggle logic
+  const themeToggle = document.getElementById("themeToggle");
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+  }
+
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+  });
+
+  // Add example channels (for demo)
+  const channels = [
+    { name: "Channel 1", url: "https://example.com/stream1.m3u8" },
+    { name: "Channel 2", url: "https://example.com/stream2.m3u8" },
+  ];
+
+  channels.forEach(channel => {
+    const option = document.createElement("option");
+    option.value = channel.url;
+    option.textContent = channel.name;
+    m3u8List.appendChild(option);
+  });
+
+  m3u8List.addEventListener("change", function () {
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(this.value);
+      hls.attachMedia(video);
+    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      video.src = this.value;
+    }
+  });
+});
