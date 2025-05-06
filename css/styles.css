@@ -1,0 +1,124 @@
+/* Base styling */
+body {
+  background-color: #42145f;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  animation: fadeIn 1.2s ease-in;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Layout */
+.container-fluid {
+  padding: 2rem;
+  width: 100%;
+  flex-grow: 1;
+}
+
+/* Flex layout for player and dropdown */
+.layout {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Player */
+.player-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-left: 2px solid #5b2a85; /* Left border for distinction */
+  padding-left: 2rem; /* Padding to avoid crowding */
+}
+
+.video-wrapper {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  background-color: black;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  margin-top: 1rem; /* Spacing above video */
+  transition: transform 0.3s ease;
+}
+.video-wrapper:hover {
+  transform: scale(1.01);
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Dropdown styling */
+.dropdown-wrapper {
+  max-width: 350px;
+  width: 100%;
+  padding: 1rem; /* Added padding for better aesthetics */
+  border: 2px solid #5b2a85; /* Border around dropdown */
+  border-radius: 8px; /* Rounded corners for dropdown */
+  background-color: #3a0e4f; /* Match with header/footer */
+}
+
+select.form-select {
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  background-color: #5b2a85;
+  color: #fff;
+  border: 1px solid #40224c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+select.form-select:hover,
+select.form-select:focus {
+  background-color: #6c3fa3;
+  outline: none;
+  border-color: #ffffff;
+}
+
+/* Header & Footer */
+header, footer {
+  background-color: #3a0e4f;
+  text-align: center;
+  padding: 1rem 0;
+  animation: fadeIn 1s ease;
+}
+
+/* Footer links */
+footer a {
+  text-decoration: none;
+  color: #e2d9f3;
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+  .layout {
+    gap: 2rem; /* Space between dropdown and player */
+  }
+
+  .dropdown-wrapper {
+    margin-right: 2rem; /* Right margin to space from player */
+  }
+}
+
+@media (min-width: 1200px) {
+  .video-wrapper {
+    max-width: 1000px;
+  }
+}
