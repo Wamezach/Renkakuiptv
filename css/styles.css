@@ -14,11 +14,15 @@ body.dark {
 }
 
 /* Base Styling */
+body, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: 'Poppins', sans-serif;
-  margin: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,7 +32,7 @@ body {
 header {
   background-color: var(--header-footer-bg);
   color: white;
-  padding: 1rem 0;
+  padding: 10px 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -82,25 +86,19 @@ header {
 /* Main Content */
 .container-fluid {
   flex-grow: 1;
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0; /* Remove padding from container */
 }
 
 .player-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  width: 100%;
-  flex-wrap: wrap;
+  height: calc(100vh - 80px); /* Adjust height to occupy full viewport minus header/footer */
 }
 
 .video-wrapper {
-  flex-grow: 1;
-  width: 100%; /* Ensure it fills available space */
-  max-width: 960px; /* Keep this if you want maximum size */
+  flex: 1;
+  padding: 0; /* Remove padding from video wrapper */
   background: white;
   border-radius: 16px;
   overflow: hidden;
@@ -113,8 +111,9 @@ header {
 }
 
 video {
-  width: 100%;
-  height: auto;
+  width: 100%; /* Full width */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 100%; /* Limit height to container */
 }
 
 .ad-wrapper {
@@ -125,12 +124,12 @@ video {
   text-align: center;
   font-weight: 500;
   color: var(--text-color);
-  display: none;
+  display: none; /* Hide ads on smaller screens for cleaner look */
 }
 
 @media (min-width: 768px) {
   .ad-wrapper {
-    display: block;
+    display: block; /* Show ads on larger screens */
   }
 
   .dropdown-wrapper {
@@ -151,30 +150,17 @@ video {
 }
 
 @media (max-width: 767px) {
-  .logo,
   .brand h1 {
-    display: none; /* Hide logo and title text */
+    font-size: 1.2rem; /* Reduced size for smaller screens */
   }
 
   .player-container {
-    width: 100%; /* Make player fill the available space */
-    max-width: none; /* Remove max-width restriction */
-    height: auto; /* Allow height to expand */
-    padding: 0; /* Remove padding */
+    flex-direction: column; /* Stack ads and video on smaller screens */
+    height: auto; /* Allow height to adjust based on content */
   }
 
-  video {
-    width: 100%; /* Ensure video fills the player width */
-    height: auto; /* Maintain aspect ratio */
-  }
-
-  /* Adjust the player height */
   .video-wrapper {
-    height: 500px; /* Set a specific height for player */
-  }
-
-  .brand {
-    display: none; /* Hide the entire brand section */
+    max-width: none; /* Remove maximum width restriction */
   }
 }
 
