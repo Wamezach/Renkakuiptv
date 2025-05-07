@@ -5,48 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Renkaku IPTV</title>
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header class="bg-dark-violet text-light shadow">
-    <div class="container header-flex">
-      <a href="#" class="text-light text-decoration-none brand">
-        <img src="logo.png" alt="Renkaku IPTV Logo" class="logo me-2" />
-        <h1 class="m-0 fs-4">Renkaku IPTV</h1>
-      </a>
-      <div class="channel-controls">
-        <div class="dropdown-wrapper">
-          <label for="m3u8List" class="form-label text-light">Select Channel</label>
-          <select class="form-select" id="m3u8List"></select>
-        </div>
-        <div class="toggle-switch">
-          <label class="switch">
-            <input type="checkbox" id="themeToggle">
-            <span class="slider round"></span>
-          </label>
-        </div>
-      </div>
-    </div>
+  <header>
+    <h1>Renkaku IPTV</h1>
+    <label class="theme-toggle">
+      <input type="checkbox" id="themeToggle" />
+      Dark Mode
+    </label>
   </header>
 
-  <main class="container-fluid">
-    <div class="player-container">
-      <div class="ad-wrapper">Ad Space Left</div>
-      <div class="video-wrapper">
-        <video id="video" controls autoplay></video>
-      </div>
-      <div class="ad-wrapper">Ad Space Right</div>
+  <main class="player-wrapper">
+    <div class="channel-container">
+      <label for="countrySelect">Country</label>
+      <select id="countrySelect">
+        <option value="Philippines">Philippines</option>
+        <option value="Japan">Japan</option>
+      </select>
+      <ul id="channelList" class="channel-list"></ul>
+    </div>
+
+    <div class="video-container">
+      <video id="video" controls autoplay></video>
     </div>
   </main>
-
-  <footer>
-    <div class="container text-center">
-      <p><strong>About Us:</strong> We provide premium IPTV access worldwide.</p>
-      <p><strong>Disclaimer:</strong> Content may vary by region or licensing.</p>
-      <p><a href="mailto:contact@renkakuiptv.com">Contact Us</a></p>
-    </div>
-  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <script src="js/script.js"></script>
