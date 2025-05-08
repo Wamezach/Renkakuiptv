@@ -115,7 +115,7 @@ Philippines: [
     { name: "YTV", url: "https://server.priterytivi.com/ytv/tracks-v1a1/mono.m3u8" }
   ],
  XXX: [
-  { name: "AdultIPTV.net Live Cams", url: "http://live.adultiptv.net/livecams.m3u8" },
+  { name: "AdultIPTV.net Live Cams", url: "https://vod.mycamtv.net/1.m3u8" },
   { name: "AdultIPTV.net MILF", url: "http://live.adultiptv.net/milf.m3u8" },
   { name: "AdultIPTV.net Big Dick", url: "http://live.adultiptv.net/bigdick.m3u8" },
   { name: "AdultIPTV.net Big Tits", url: "http://live.adultiptv.net/bigtits.m3u8" },
@@ -131,7 +131,7 @@ Philippines: [
   { name: "AdultIPTV.net Cuckold", url: "http://live.adultiptv.net/cuckold.m3u8" },
   { name: "AdultIPTV.net Threesome", url: "http://live.adultiptv.net/threesome.m3u8" },
   { name: "AdultIPTV.net Russian", url: "http://live.adultiptv.net/russian.m3u8" }
-  // Add more entries here if needed
+
 ]
 };
 
