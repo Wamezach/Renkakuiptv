@@ -113,7 +113,26 @@ Philippines: [
     { name: "WOWOWCINEMA", url: "https://server.priterytivi.com/wcinema/tracks-v1a1/mono.m3u8" },
     { name: "WOWOW PRIME", url: "https://server.priterytivi.com/wprime/tracks-v1a1/mono.m3u8" },
     { name: "YTV", url: "https://server.priterytivi.com/ytv/tracks-v1a1/mono.m3u8" }
-  ]
+  ],
+ XXX: [
+  { name: "AdultIPTV.net Live Cams", url: "http://live.adultiptv.net/livecams.m3u8" },
+  { name: "AdultIPTV.net MILF", url: "http://live.adultiptv.net/milf.m3u8" },
+  { name: "AdultIPTV.net Big Dick", url: "http://live.adultiptv.net/bigdick.m3u8" },
+  { name: "AdultIPTV.net Big Tits", url: "http://live.adultiptv.net/bigtits.m3u8" },
+  { name: "AdultIPTV.net Fetish", url: "http://live.adultiptv.net/fetish.m3u8" },
+  { name: "AdultIPTV.net Pornstar", url: "http://live.adultiptv.net/pornstar.m3u8" },
+  { name: "AdultIPTV.net Big Ass", url: "http://live.adultiptv.net/bigass.m3u8" },
+  { name: "AdultIPTV.net Interracial", url: "http://live.adultiptv.net/interracial.m3u8" },
+  { name: "AdultIPTV.net Latina", url: "http://live.adultiptv.net/latina.m3u8" },
+  { name: "AdultIPTV.net POV", url: "http://live.adultiptv.net/pov.m3u8" },
+  { name: "AdultIPTV.net Blowjob", url: "http://live.adultiptv.net/blowjob.m3u8" },
+  { name: "AdultIPTV.net Teen", url: "http://live.adultiptv.net/teen.m3u8" },
+  { name: "AdultIPTV.net Hardcore", url: "http://live.adultiptv.net/hardcore.m3u8" },
+  { name: "AdultIPTV.net Cuckold", url: "http://live.adultiptv.net/cuckold.m3u8" },
+  { name: "AdultIPTV.net Threesome", url: "http://live.adultiptv.net/threesome.m3u8" },
+  { name: "AdultIPTV.net Russian", url: "http://live.adultiptv.net/russian.m3u8" }
+  // Add more entries here if needed
+]
 };
 
   function loadChannel(url) {
